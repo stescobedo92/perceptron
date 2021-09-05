@@ -79,6 +79,17 @@ public class Matrix {
         return temp;
     }
 
+    public static Matrix traspose(Matrix a){
+        Matrix temp = new Matrix(a.rows, a.cols);
+        for(int i = 0; i < a.rows; i++){
+            for(int j = 0; j < a.cols; j++){
+                temp.data[j][i] = a.data[i][j];
+            }
+        }
+
+        return temp;
+    }
+
     public static Matrix multiply(Matrix a, Matrix b){
         Matrix temp = new Matrix(a.rows, b.cols);
         for(int i = 0; i < temp.rows; i++){
