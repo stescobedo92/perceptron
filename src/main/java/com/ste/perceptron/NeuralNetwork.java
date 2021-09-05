@@ -1,6 +1,6 @@
 package com.ste.perceptron;
 
-import com.sun.tools.javac.util.List;
+import java.util.List;
 
 public class NeuralNetwork {
     Matrix weights_ih, weights_ho;
@@ -21,7 +21,7 @@ public class NeuralNetwork {
         hidden.add(bias_h);
         hidden.sigmoid();
 
-        Matrix output = Matrix.multiply(weights_ho,input);
+        Matrix output = Matrix.multiply(weights_ho,hidden);
         output.add(bias_o);
         output.sigmoid();
 
