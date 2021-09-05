@@ -1,6 +1,5 @@
 package com.ste.perceptron;
 
-import javax.sound.sampled.SourceDataLine;
 import com.sun.tools.javac.util.List;
 
 public class NeuralNetwork {
