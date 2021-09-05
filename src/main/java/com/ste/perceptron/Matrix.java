@@ -78,4 +78,54 @@ public class Matrix {
 
         return temp;
     }
+
+    public static Matrix multiply(Matrix a, Matrix b){
+        Matrix temp = new Matrix(a.rows, b.cols);
+        for(int i = 0; i < temp.rows; i++){
+            for(int j = 0; j < temp.cols; j++){
+                double sum = 0;
+                for(int k = 0; k < a.cols; k++){
+                    sum += a.data[i][k] * b.data[k][j];
+                }
+                temp.data[i][j] = sum;
+            }
+        }
+
+        return temp;
+    }
+
+    public void multiply(double a){
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                this.data[i][j] *= a;
+            }
+        }
+    }
+
+    public void multiply(Matrix a){
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                this.data[i][j] *= a.data[i][j];
+            }
+        }
+    }
+
+    public void sigmoid() {
+        for(int i = 0; i < rows; i++){
+            for(int j = 0; j < cols; j++){
+                this.data[i][j] = 1 / (1 + Math.exp(-this.data[i][j]));
+            }
+        }
+    }
+
+    public Matrix dsigmoid() {
+        Matrix temp = new Matrix(rows, cols);
+        for(int i = 0; i < temp.rows; i++){
+            for(int j = 0; j < temp.cols; j++){
+                temp.data[i][j] = this.data[i][j] * (1 - this.data[i][j]);
+            }
+        }
+
+        return temp;
+    }
 }
