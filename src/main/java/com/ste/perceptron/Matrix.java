@@ -1,7 +1,7 @@
 package com.ste.perceptron;
 
-import javax.sound.sampled.SourceDataLine;
-import com.sun.tools.javac.util.List;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Matrix {
     double[][] data;
